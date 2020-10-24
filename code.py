@@ -7,6 +7,7 @@ import win32con
 import numpy as np
 import ast
 import keyboard
+from fuzzy_types.fuzzy import FuzzyDict
 
 # Globals
 # ------------------
@@ -14,10 +15,9 @@ import keyboard
 #y_pad = 366
 # 330 140 1660 1020
 
-
 class Database:
     def __init__(self):
-        self.dict = dict()
+        self.dict = FuzzyDict({})
 
     def readDict(self, file):
         fisier = open(file, "r")
@@ -29,6 +29,16 @@ class Database:
         fisier = open(file, "w")
         print(self.dict, file=fisier)
 
+    def addEntry(self, question, correctAnswer, wrongAnswer1, wrongAnswer2):
+        self.dict[question] = (correctAnswer, wrongAnswer1, wrongAnswer2)
+
+    def lookup(self, question):
+        
+        pass
+        
+
+x = Database()
+
 def toGrayscale(image):
     return image.convert("L")
 
@@ -37,12 +47,10 @@ def toNpArray(image):
     return np.asarray(image)
 
 def mousePos(cord):
-    win32api.SetCursorPos(x_pad + cord[0], y_pad + cord[1])
+    win32api.SetCursorPos(cord[0], cord[1])
 
 def get_cords():
     x,y = win32api.GetCursorPos()
-    x = x - x_pad
-    y = y - y_pad
     print(x,y)
 
 def leftClick():
@@ -59,11 +67,15 @@ def screenGrab():
             '.png', 'PNG')
     return im
 
+def getList(txt):
+    return list(filter(lambda a: a != "" and a != "\x0c", txt.split('\n')))
 
 def main():
     #get_cords()
+
     while True:
         if keyboard.is_pressed("f2"):
+            print(x.dict["appl"])
             pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
             im = screenGrab()
             im = im.resize((2660, 1640))
@@ -71,10 +83,7 @@ def main():
                     '.png', 'PNG')
             txt = pytesseract.image_to_string(im)
             print(txt)
-            
-    #print(pytesseract.image_to_string(
-    #    r'C:\Users\Liviu.LIVIU-PC.000\Desktop\bot\snap__1603558076.png'))
-
+            print(getList(txt))
 
 if __name__ == '__main__':
     main()
