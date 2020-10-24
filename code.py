@@ -1,5 +1,6 @@
+from numpy.lib.function_base import append, vectorize
 import pytesseract
-from PIL import ImageGrab
+from PIL import ImageGrab, Image
 import os
 import time
 import win32api
@@ -42,7 +43,6 @@ x = Database()
 def toGrayscale(image):
     return image.convert("L")
 
-
 def toNpArray(image):
     return np.asarray(image)
 
@@ -63,12 +63,32 @@ def leftClick():
 def screenGrab():
     box = (320, 130, 1650, 950)
     im = ImageGrab.grab(box)
-    im.save(os.getcwd() + '\\screenshots\\snap__' + str(int(time.time())) +
-            '.png', 'PNG')
     return im
 
 def getList(txt):
     return list(filter(lambda a: a != "" and a != "\x0c", txt.split('\n')))
+
+def saveImage(image):
+    image.save(os.getcwd() + '\\screenshots\\original__' + str(int(time.time())) +
+                    '.png', 'PNG')
+
+def saveImageRes(image):
+    image.save(os.getcwd() + '\\screenshots\\resized__' + str(int(time.time())) +
+                    '.png', 'PNG')
+
+def mapFunc(x):
+    if x > 130:
+        return 255
+    return x
+    
+def removeNoise(image):
+    array = toNpArray(toGrayscale(image))
+    vectorizedFunc = np.vectorize(mapFunc)
+    array = vectorizedFunc(array)
+    finalImage = Image.fromarray(array)
+    finalImage = finalImage.resize((2660, 1640), 1) 
+    finalImage.show()
+    return finalImage
 
 def main():
     #get_cords()
@@ -77,13 +97,20 @@ def main():
         if keyboard.is_pressed("f2"):
             print(x.dict["appl"])
             pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+            
+            #save original image
             im = screenGrab()
-            im = im.resize((2660, 1640))
-            im.save(os.getcwd() + '\\screenshots\\resized__' + str(int(time.time())) +
-                    '.png', 'PNG')
-            txt = pytesseract.image_to_string(im)
-            print(txt)
-            print(getList(txt))
+
+            saveImage(im)
+            
+            #save noise removed image
+            new = removeNoise(im)
+            saveImageRes(new)
+
+            print(pytesseract.image_to_string(new))
+            
+    #print(pytesseract.image_to_string(
+    #    r'C:\Users\Liviu.LIVIU-PC.000\Desktop\bot\snap__1603558076.png'))
 
 if __name__ == '__main__':
     main()
