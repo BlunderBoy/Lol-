@@ -6,11 +6,13 @@ import win32api
 import win32con
 import numpy as np
 import ast
+import keyboard
 
 # Globals
 # ------------------
-x_pad = 699
-y_pad = 349
+#x_pad = 582
+#y_pad = 366
+# 330 140 1660 1020
 
 
 class Database:
@@ -51,7 +53,7 @@ def leftClick():
 
 
 def screenGrab():
-    box = (x_pad + 1, y_pad + 1, x_pad + 549, y_pad + 499)
+    box = (320, 130, 1650, 950)
     im = ImageGrab.grab(box)
     im.save(os.getcwd() + '\\screenshots\\snap__' + str(int(time.time())) +
             '.png', 'PNG')
@@ -60,10 +62,16 @@ def screenGrab():
 
 def main():
     #get_cords()
-    pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
-    im = toGrayscale(screenGrab())
-    txt = pytesseract.image_to_string(im)
-    print(txt)
+    while True:
+        if keyboard.is_pressed("f2"):
+            pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+            im = screenGrab()
+            im = im.resize((2660, 1640))
+            im.save(os.getcwd() + '\\screenshots\\resized__' + str(int(time.time())) +
+                    '.png', 'PNG')
+            txt = pytesseract.image_to_string(im)
+            print(txt)
+            
     #print(pytesseract.image_to_string(
     #    r'C:\Users\Liviu.LIVIU-PC.000\Desktop\bot\snap__1603558076.png'))
 
