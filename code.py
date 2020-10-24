@@ -4,11 +4,13 @@ import os
 import time
 import win32api
 import win32con
+import numpy as np
+import ast
 
 # Globals
 # ------------------
-x_pad = 709
-y_pad = 359
+x_pad = 699
+y_pad = 349
 
 
 class Database:
@@ -58,10 +60,12 @@ def screenGrab():
 
 def main():
     #get_cords()
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
-    print(pytesseract.image_to_string(
-        r'C:\Users\Liviu.LIVIU-PC.000\Desktop\bot\snap__1603558076.png'))
-    pass
+    pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+    im = toGrayscale(screenGrab())
+    txt = pytesseract.image_to_string(im)
+    print(txt)
+    #print(pytesseract.image_to_string(
+    #    r'C:\Users\Liviu.LIVIU-PC.000\Desktop\bot\snap__1603558076.png'))
 
 
 if __name__ == '__main__':
