@@ -137,7 +137,25 @@ def main():
         pass
 
     pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+    print(database.dict.keys())
+    print("f2: basic ocr, f7: ocr + dict, f6: exit & save, f12: debug and testing")
+
     while True:
+        if keyboard.is_pressed("f12"):
+            im = removeNoise(screenGrab())
+            list = getList(pytesseract.image_to_string(im))
+            saveImageRes(im)
+
+            if len(list) < 4:
+                print(list)
+                print("Ceva nu a mers bine la text recognition")
+                continue
+
+            print(list)
+            question = list[0]
+            answers = list[1::]
+
+            print(database.lookup(question, answers))
         if keyboard.is_pressed("f2"):
             #save original image
             im = screenGrab()
