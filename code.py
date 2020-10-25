@@ -55,12 +55,12 @@ class Database:
                     if fuzz.ratio(ans, w2) < fuzzy_threshold: # daca nu e wrong answer 2
                         temp.append(ans)
 
-            if (len(temp) > 1) {
+            if (len(temp) > 1):
                 print("nu am gasit nimic!!!!!!!!")
-                return 0;
-            } else {
+                return 0
+            else:
                 return temp[0]
-            }
+            
             # else match pe wrong answers si il luam pe ala ramas
             # ELSE fuzzy match pe wrong answers si luam ala ramas
             # EEEELSEEEE return 1 xd
