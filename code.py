@@ -35,8 +35,16 @@ class Database:
     def addEntry(self, question, correctAnswer, wrongAnswer1, wrongAnswer2):
         self.dict[question] = (correctAnswer, wrongAnswer1, wrongAnswer2)
 
-    def lookup(self, question):
-        return self.dict[question]
+    def lookup(self, question, answers):
+        (ca, w1, w2) = self.dict[question]
+        if ca in answers:
+            return answers.index(ca)
+        else:
+            # fuzzy match pe fiecare
+            # else match pe wrong answers si il luam pe ala ramas
+            # ELSE fuzzy match pe wrong answers si luam ala ramas
+            # EEEELSEEEE return 1 xd
+            pass
 
 def toGrayscale(image):
     return image.convert("L")
