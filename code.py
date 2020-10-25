@@ -104,8 +104,8 @@ def binarize(image_to_transform, threshold):
 
 def removeNoise(image):
     image = toGrayscale(image)
-    finalImage = image.resize((2660, 1640))
-    finalImage = binarize(image, 58)
+    finalImage = binarize(image, 65)
+    finalImage = finalImage.resize((1330*3, 820*3), Image.ANTIALIAS)
     return finalImage
 
 def main():
