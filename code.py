@@ -10,12 +10,14 @@ import ast
 import keyboard
 from fuzzy_types.fuzzy import FuzzyDict
 import pprint
+from fuzzywuzzy import fuzz
 
 # Globals
 # ------------------
 #x_pad = 582
 #y_pad = 366
 # 330 140 1660 1020
+fuzzy_threshold = 85
 
 class Database:
     def __init__(self):
@@ -41,11 +43,28 @@ class Database:
             return answers.index(ca)
         else:
             # fuzzy match pe fiecare
+            for ans in answers:
+                if fuzz.ratio(ans, ca) > fuzzy_threshold:
+                    return ans
+            
+            temp = []
+            for ans in answers:
+                if fuzz.ratio(ans, w1) < fuzzy_threshold: # daca nu e wrong answer 1
+                    temp.append(ans)
+                else: 
+                    if fuzz.ratio(ans, w2) < fuzzy_threshold: # daca nu e wrong answer 2
+                        temp.append(ans)
+
+            if (len(temp) > 1) {
+                print("nu am gasit nimic!!!!!!!!")
+                return 0;
+            } else {
+                return temp[0]
+            }
             # else match pe wrong answers si il luam pe ala ramas
             # ELSE fuzzy match pe wrong answers si luam ala ramas
             # EEEELSEEEE return 1 xd
             # test
-            pass
 
 def toGrayscale(image):
     return image.convert("L")
