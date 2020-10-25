@@ -38,7 +38,14 @@ class Database:
         self.dict[question] = (correctAnswer, wrongAnswer1, wrongAnswer2)
 
     def lookup(self, question, answers):
-        (ca, w1, w2) = self.dict[question]
+        #print("ques:", question)
+        #print("given ans:", answers)
+        try: (ca, w1, w2) = self.dict[question]
+        except:
+            print("Nu am gasit intrebarea")
+            return
+        
+        #print("ans:", ca, w1, w2)
         if ca in answers:
             return answers.index(ca)
         else:
@@ -124,7 +131,7 @@ def binarize(image_to_transform, threshold):
 
 def removeNoise(image):
     image = toGrayscale(image)
-    finalImage = binarize(image, 65)
+    finalImage = binarize(image, 75)
     finalImage = finalImage.resize((1330*3, 820*3), Image.ANTIALIAS)
     return finalImage
 

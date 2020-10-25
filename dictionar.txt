@@ -1,6 +1,22 @@
-{   'How many fans attended the Worlds 2017 finals in the Beijing National Stadium?': (   '40,000',
+{   'Fnatic vs. OMG (2014) was the longest match ever at Worlds. But how long was It?': (   '71:34 '
+                                                                                            'min',
+                                                                                            '15:44 '
+                                                                                            'min',
+                                                                                            '69:01 '
+                                                                                            'min'),
+    'How many fans attended the Worlds 2017 finals in the Beijing National Stadium?': (   '40,000',
                                                                                           '30,000',
                                                                                           '20,000'),
+    'How many teams participate at Worlds 2020?': ('22', '20', '21'),
+    "What Is LeBlanc's secondary title?": (   'The deceiver',
+                                              'The grand duelist',
+                                              'The bestial huntress'),
+    "What Is Nautilus's secondary title?": (   'The titan of the depths',
+                                               'The great steam golem',
+                                               'The colossus'),
+    'What Is not an ability of Ezreal?': (   'Orb of Deception',
+                                             'Mystic Shot',
+                                             'Essence Flux'),
     'What do Ezreal, Udyr and Zilean all have in common?': (   'Named after '
                                                                'Riot employees',
                                                                'Can increase '
@@ -53,6 +69,13 @@
     'Which champions critical strike chance is doubled?': (   'Yasuo',
                                                               'ofeya 4',
                                                               'Tle] al'),
+    'Which champions had the highest win rate at Worlds 2019?': (   'Kennen '
+                                                                    'and Tahm '
+                                                                    'Kench',
+                                                                    'Thresh '
+                                                                    'and Ornn',
+                                                                    'Caitlyn '
+                                                                    'and Zed'),
     'Which of these Countries never hosted a Worlds game?': (   'Japan',
                                                                 'Germany',
                                                                 'SY aetsle'),
@@ -68,17 +91,26 @@
     'Which of these champions can teleport isle ale': (   'Ryze',
                                                           'Aurelion Sol',
                                                           'Kled'),
+    'Which of these champions has the most World Championship skins?': (   'Thresh',
+                                                                           'Gragas',
+                                                                           'Nunu'),
     'Which of these items costs most?': (   'Trinity Force',
                                             "Rabadon's Deathcap",
                                             'Infinity Edge'),
     'Which of these players has attended Worlds the highest number of times?': (   'Doublelift',
                                                                                    'Mata',
                                                                                    'Faker'),
+    'Which of these teams never existed?': (   'Samsung Red',
+                                               'Samsung Blue',
+                                               'Samsung White'),
     'Which of these teams never played at theWorlds stage?': (   'Excel Gaming',
                                                                  'Gamania '
                                                                  'Bears',
                                                                  'Saigon '
                                                                  'Jokers'),
+    'Which of these teams represent Europe at Worlds 2020?': (   'Rogue',
+                                                                 'SK Gaming',
+                                                                 'Aelia'),
     'Which of these teams represent Korea at Worlds 2020?': (   'Gen.G',
                                                                 'T1',
                                                                 'KT Rolster'),
@@ -93,10 +125,17 @@
     'Which pair of champions is blood-related?': (   'Katarina and Cassiopeia',
                                                      'Teemo and Lulu',
                                                      'Lux and Ezreal'),
-    'Which team eliminated SK Telecom T1 in 2019?': (   'Team SoloMid',
-                                                        'Fnatic',
-                                                        'cy'),
+    'Which player got a Pentakill at Worlds 2019?': (   'Viper',
+                                                        'JackeyLove',
+                                                        'Doublelift'),
+    'Which team eliminated SK Telecom T1 in 2019?': (   'G2',
+                                                        'Team SoloMid',
+                                                        'Fnatic'),
+    'Which team won Worlds 2019?': (   'FunPlus Phoenix',
+                                       'Invictus Gaming',
+                                       'CTs] 0 CR'),
     'Who is the Green Father?': ('Ivern', 'Nasus', 'Maokai'),
     'Who is the boy who shattered time?': ('Ekko', 'vai (=) 0)', 'Ezreal'),
     'Who is the great fire tank of Freljord?': ('Ornn', 'Tle] al', 'Aatrox'),
-    'Who was the 2014 Worlds MVP?': ('Mata', 'xPeke', 'Clearlove')}
+    'Who was the 2014 Worlds MVP?': ('Mata', 'xPeke', 'Clearlove'),
+    'Who was the 2015 Worlds MVP?': ('MaRin', 'KAKAO', 'Karsa')}
