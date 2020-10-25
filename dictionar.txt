@@ -1,0 +1,40 @@
+{   'What do Ezreal, Udyr and Zilean all have in common?': (   'Named after '
+                                                               'Riot employees',
+                                                               'Joined the '
+                                                               'rift in 2012',
+                                                               'Can increase '
+                                                               'movement '
+                                                               'speed'),
+    'What role plays Lee Sin, the blind monk?': ('Fighter', 'Assasin', 'Mage'),
+    'When does the Baron Nashor spawn for the first time?': (   '20:00',
+                                                                '18:00',
+                                                                'ipl'),
+    'Which bonus does the item "Doran\'s Ring" not grant?': (   '+75 Mana',
+                                                                'anol OB al',
+                                                                '+15 AP'),
+    'Which champion has the highest health points at level 1?': (   'Tryndamere',
+                                                                    'Tele',
+                                                                    'Malphite'),
+    'Which champion has the lowest health pointsat level 1?': (   'Kled',
+                                                                  'Sona',
+                                                                  'Nami'),
+    'Which champion has to reload after four basic PINE Oes': (   'Jhin',
+                                                                  'CT es Wess',
+                                                                  'Lucian'),
+    'Which champion has to reload after four basic attacks?': (   'Jhin',
+                                                                  'Graves',
+                                                                  'Murer'),
+    'Which of these champions can generate additional gold with his abilities?': (   'Gangplank',
+                                                                                     'Miss '
+                                                                                     'Fortune',
+                                                                                     'CT '
+                                                                                     'es '
+                                                                                     'Wess'),
+    'Which of these teams never played at theWorlds stage?': (   'Excel Gaming',
+                                                                 'Gamania '
+                                                                 'Bears',
+                                                                 'Saigon '
+                                                                 'Jokers'),
+    'Which organization has won Worlds the most Mase': (   'SK Telecom T1',
+                                                           'Invictus Gaming',
+                                                           'Fnatic')}
